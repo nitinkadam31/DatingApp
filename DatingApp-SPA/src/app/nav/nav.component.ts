@@ -16,17 +16,17 @@ export class NavComponent implements OnInit {
 
   login()
   {
-    console.log(this.model);
+    // console.log(this.model);
     this.authService.login(this.model).subscribe(next => {
         console.log('Logged in Successfully');
     }, error => {
-      console.log('Failed to login');
+      console.log(error);
     });
   }
 
   loggedIn()
   {
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem('token');
     return !!token;
   }
 
